@@ -22,8 +22,35 @@
     </style>
 </head>
 
-<body>
+<body class="bg-[#F8FAFC]">
+    <main class="py-20">
+        <section class="bg-white w-xl p-8 mx-auto shadow-xl rounded-lg">
+            <div class="text-center mb-6">
+                <img class="mx-auto mb-6" src="./assets/github-logo.png" alt="">
+                <h2 class="font-semibold text-2xl mb-1">GitHub Issues Tracker</h2>
+                <p class="text-[#64748B]">Sign in to manage your issues</p>
+            </div>
+            <form>
+                <label for="username">Username</label><br>
+                <input class="mt-2 mb-1 w-full border-[#E4E4E7] p-2 rounded-lg" type="text" name="" id="username" placeholder="Enter Username"><br>
+                <p class="text-[#4A00FF] mb-4 text-sm">Default: admin</p>
 
+                <label for="password">Password</label><br>
+                <input class="mt-2 mb-1 w-full border-[#E4E4E7] p-2 rounded-lg" type="password" name="" id="password" placeholder="Enter Password"><br>
+                <p class="text-[#4A00FF] mb-4 text-sm">Default: admin123</p>
+
+                <button id="login-btn" class="btn btn-primary w-full">Sign In</button>
+            </form>
+            <div class="divider my-5">OR</div>
+            <p class="text-[#64748B] text-center text-sm">Demo Credentials:</p>
+            <div class="bg-[#F8FAFC] rounded-lg py-6 text-center mt-2">
+                <p><span class="font-semibold">Username:</span> admin</p>
+                <p><span class="font-semibold">Password:</span> admin123</p>   
+            </div>
+        </section>
+    </main>
+    
+    <script src="./script/login.js"></script>
 </body>
 
 </html>
