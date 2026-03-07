@@ -3,9 +3,27 @@ const issuesContainer = document.getElementById('issue-container');
 const sectionButtons = document.querySelectorAll('#section-buttons button');
 const totalIssuesCounter = document.getElementById('total-issues-counter');
 const loadingSpinnerContainer = document.getElementById('loading-spinner');
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
 
 
+// Search functionality
+searchBtn.addEventListener('click', async () => {
+    if (searchInput.value.trim() === '') {
+        alert('Please enter a search query');
+        return;
+    }
+    toggleLoading(true)
+    const query = searchInput.value.trim().toLowerCase();
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${query}`)
+    const data = await res.json();
+    displayIssues(data.data)
+    totalIssues(data.data)
+    toggleLoading(false)
+})
 
+
+// Category button active status functionality
 sectionButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
         for (const button of sectionButtons) {
@@ -15,6 +33,8 @@ sectionButtons.forEach((btn) => {
     })
 })
 
+
+// function to display issues
 const loadOpenIssues = async () => {
     toggleLoading(true)
     const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
