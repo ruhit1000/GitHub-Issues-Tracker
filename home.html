@@ -29,6 +29,7 @@
 
 <body>
     <header>
+        <!-- Navbar Section -->
         <section>
             <div class="navbar bg-base-100 shadow-sm">
                 <div class="flex-1">
@@ -48,13 +49,16 @@
     </header>
 
     <main class="bg-[#F8FAFC] py-14">
+        <!-- Category Section -->
         <section id="section-buttons" class="bg-white p-6 rounded-lg container mx-auto mb-4 shadow">
             <button onclick="loadAllIssues()" class="btn btn-outline btn-active btn-primary w-[120px]">All</button>
             <button onclick="loadOpenIssues()" class="btn btn-outline btn-primary w-[120px]">Open</button>
             <button onclick="loadClosedIssues()" class="btn btn-outline btn-primary w-[120px]">Closed</button>
         </section>
 
+        <!-- Issue Container Section -->
         <section class="bg-white rounded-lg container mx-auto shadow">
+            <!-- Issue Counter Section -->
             <div class="flex justify-between items-center p-6 border-b-2 border-gray-200">
                 <div class="flex gap-2">
                     <div class="w-[50px] h-[50px] bg-[#ECE4FF] rounded-full flex justify-center items-center">
@@ -77,12 +81,26 @@
                 </div>
             </div>
 
-            <div id="issue-container" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+            <!-- Issues Section -->
+            <div id="issue-container" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            </div>
 
             <!-- Loading Spinner -->
             <div id="loading-spinner" class="flex justify-center items-center p-6 hidden">
                 <span class="loading loading-spinner loading-xl"></span>
             </div>
+
+            <!-- Modal Section -->
+            <dialog id="issueDetails" class="modal">
+                <div class="modal-box">
+                    <div id="modal-details"></div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn btn-primary">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </section>
     </main>
 

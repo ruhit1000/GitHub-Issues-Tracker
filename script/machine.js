@@ -2,7 +2,8 @@ const displayIssues = (issues) => {
     issuesContainer.innerHTML = '';
     issues.forEach((issue) => {
         const issueCard = document.createElement('div');
-        issueCard.className = `shadow-md rounded-lg border-t-4 ${issue.status === 'open' ? 'border-[#00A96E]' : 'border-[#A855F7]'}`;
+        issueCard.onclick = () => OpenIssueDetails(issue.id);
+        issueCard.className = `cursor-pointer hover:shadow-lg hover:translate-y-[-4px] ease-in-out shadow-md rounded-lg border-t-4 ${issue.status === 'open' ? 'border-[#00A96E]' : 'border-[#A855F7]'}`;
         issueCard.innerHTML = `
         <div class="p-4 border-b border-gray-200">
             <div class="flex justify-between mb-3">
@@ -26,7 +27,7 @@ const displayIssues = (issues) => {
                     <p>${issue.assignee ? issue.assignee : 'Unassigned'}</p>
                 </div>
                 <div>
-                    <p class="font-medium"v>Updated:</p>
+                    <p class="font-medium">Updated:</p>
                     <p>${issue.updatedAt.slice(0, 10)}</p>
                 </div>
             </div>
