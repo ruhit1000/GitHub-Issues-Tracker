@@ -15,6 +15,26 @@ sectionButtons.forEach((btn) => {
     })
 })
 
+const loadOpenIssues = async () => {
+    toggleLoading(true)
+    const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+    const data = await res.json();
+    const openIssues = data.data.filter((issue) => issue.status === 'open')
+    displayIssues(openIssues)
+    totalIssues(openIssues)
+    toggleLoading(false)
+}
+
+const loadClosedIssues = async () => {
+    toggleLoading(true)
+    const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+    const data = await res.json();
+    const closedIssues = data.data.filter((issue) => issue.status === 'closed')
+    displayIssues(closedIssues)
+    totalIssues(closedIssues)
+    toggleLoading(false)
+}
+
 
 const loadAllIssues = async () => {
     toggleLoading(true)
