@@ -49,7 +49,7 @@
 
     <main class="bg-[#F8FAFC] py-14">
         <section id="section-buttons" class="bg-white p-6 rounded-lg container mx-auto mb-4 shadow">
-            <button class="btn btn-active btn-primary w-[120px]">All</button>
+            <button onclick="loadAllIssues()" class="btn btn-outline btn-active btn-primary w-[120px]">All</button>
             <button class="btn btn-outline btn-primary w-[120px]">Open</button>
             <button class="btn btn-outline btn-primary w-[120px]">Closed</button>
         </section>
@@ -61,7 +61,7 @@
                         <img class="" src="./assets/Aperture.png" alt="">
                     </div>
                     <div>
-                        <h2 class="font-semibold text-xl"><span>10</span> Issues</h2>
+                        <h2 class="font-semibold text-xl"><span id="total-issues-counter">0</span> Issues</h2>
                         <p class="text-[#64748B]">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -77,40 +77,9 @@
                 </div>
             </div>
 
-            <div id="issue-container" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                <div class="shadow-md rounded-lg border-t-4 border-[#A855F7]">
-                    <div class="p-4 border-b border-gray-200">
-                        <div class="flex justify-between mb-3">
-                            <img src="./assets/Closed- Status .png" alt="">
-                            <div class="badge badge-soft badge-error">High</div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-2">Fix navigation menu on mobile devices</h4>
-                            <p class="text-[#64748B] mb-3 text-sm">The navigation menu doesn't collapse properly on
-                                mobile devices...</p>
-                            <div>
-                                <div class="badge badge-soft badge-error border-error">Error</div>
-                                <div class="badge badge-soft badge-warning border-warning">Warning</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 text-[#64748B] text-sm space-y-2">
-                        <div class="flex justify-between">
-                            <p>#1 by john_doe</p>
-                            <p>1/15/2024</p>
-                        </div>
-                        <div class="flex justify-between">
-                            <div>
-                                <p class="font-medium">Assignee:</p>
-                                <p>jane_smith</p>
-                            </div>
-                            <div>
-                                <p class="font-medium"v>Updated:</p>
-                                <p>1/15/2024</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="issue-container" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+            <div id="loading-spinner" class="flex justify-center items-center p-6 hidden">
+                <span class="loading loading-spinner loading-xl"></span>
             </div>
         </section>
     </main>

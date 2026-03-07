@@ -54,3 +54,13 @@ const createBadge = (arr) => {
     });
     return badgeElements.join(' ')
 }
+
+const totalIssues = (arr) => totalIssuesCounter.textContent = arr.length;
+
+const toggleLoading = (status) => {
+    if (status) {
+        loadingSpinnerContainer.classList.remove('hidden');
+    } else {
+        loadingSpinnerContainer.classList.add('hidden');
+    }
+};
