@@ -48,7 +48,7 @@
     </header>
 
     <main class="bg-[#F8FAFC] py-14">
-        <section class="bg-white p-6 rounded-lg container mx-auto mb-4 shadow">
+        <section id="section-buttons" class="bg-white p-6 rounded-lg container mx-auto mb-4 shadow">
             <button class="btn btn-active btn-primary w-[120px]">All</button>
             <button class="btn btn-outline btn-primary w-[120px]">Open</button>
             <button class="btn btn-outline btn-primary w-[120px]">Closed</button>
@@ -57,7 +57,7 @@
         <section class="bg-white rounded-lg container mx-auto shadow">
             <div class="flex justify-between items-center p-6 border-b-2 border-gray-200">
                 <div class="flex gap-2">
-                    <div class="w-[50px] bg-[#ECE4FF] rounded-full flex justify-center items-center">
+                    <div class="w-[50px] h-[50px] bg-[#ECE4FF] rounded-full flex justify-center items-center">
                         <img class="" src="./assets/Aperture.png" alt="">
                     </div>
                     <div>
@@ -77,30 +77,46 @@
                 </div>
             </div>
 
-            <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                <div class="shadow-md rounded-lg border border-gray-200">
+            <div id="issue-container" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                <div class="shadow-md rounded-lg border-t-4 border-[#A855F7]">
                     <div class="p-4 border-b border-gray-200">
                         <div class="flex justify-between mb-3">
-                            <img src="./assets/Open-Status.png" alt="">
+                            <img src="./assets/Closed- Status .png" alt="">
                             <div class="badge badge-soft badge-error">High</div>
                         </div>
                         <div>
                             <h4 class="font-semibold mb-2">Fix navigation menu on mobile devices</h4>
-                            <p class="text-[#64748B] mb-3 text-sm">The navigation menu doesn't collapse properly on mobile devices...</p>
+                            <p class="text-[#64748B] mb-3 text-sm">The navigation menu doesn't collapse properly on
+                                mobile devices...</p>
                             <div>
                                 <div class="badge badge-soft badge-error border-error">Error</div>
                                 <div class="badge badge-soft badge-warning border-warning">Warning</div>
                             </div>
                         </div>
                     </div>
-                    <div class="p-4 text-[#64748B] text-sm">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
+                    <div class="p-4 text-[#64748B] text-sm space-y-2">
+                        <div class="flex justify-between">
+                            <p>#1 by john_doe</p>
+                            <p>1/15/2024</p>
+                        </div>
+                        <div class="flex justify-between">
+                            <div>
+                                <p class="font-medium">Assignee:</p>
+                                <p>jane_smith</p>
+                            </div>
+                            <div>
+                                <p class="font-medium"v>Updated:</p>
+                                <p>1/15/2024</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script src="./script/machine.js"></script>
+    <script src="./script/home.js"></script>
 </body>
 
 </html>
